@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Django = "*"
+
+[dev-packages]
+mypy = "*"
+pylint = "*"
+flake8 = "*"
+wemake-python-styleguide = "*"
+bandit = "*"
+isort = "*"
+
+[requires]
+python_version = "3.8"
