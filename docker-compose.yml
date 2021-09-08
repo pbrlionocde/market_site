@@ -9,6 +9,8 @@ services:
       - POSTGRERS_DB=market_db
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=1111
+    ports:
+      - "5432:5432"
 
   django:
     build: .
@@ -18,7 +20,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - 8000:8000
+      - "8000:8000"
     depends_on:
       - db
 

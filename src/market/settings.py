@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'market.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'market_db',
+        'NAME': 'postgres',
         'USER': 'admin',
         'PASSWORD': '1111',
         'HOST': 'db',
