@@ -12,7 +12,7 @@ __pycache__/
 *.so
 
 # VS code
-.vscode
+# .vscode
 
 # Distribution / packaging
 .Python
@@ -68,6 +68,7 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+.migrations
 
 # Flask stuff:
 instance/
