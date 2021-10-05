@@ -4,5 +4,5 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class CustomUser(User):
-    adress = models.TextField(blank=True)
+# class CustomUser(User):
+#     adress = models.TextField(blank=True)
