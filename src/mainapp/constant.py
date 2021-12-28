@@ -1,0 +1,1 @@
+MAX_LEN_NAME = 40

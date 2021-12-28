@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>Phones</h1>
+<ul>
+{% for phone in object_list %}
+    <h3>Manufacturer {{ phone.manufacturer }}</h3>
+        <h4>Model: {{ phone.model }}</h4>
+        Detail --> 
+        <p>size of display: {{ phone.display }}</p>
+        Manufacturer of processor{{ phone.processor }} ; cores - {{ phone.number_cores }} 
+{% empty %}
+    <li>No phones yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}
