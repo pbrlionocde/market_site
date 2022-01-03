@@ -1,18 +1,27 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/item1.css' %}">
+{% endblock style %}
 
 
 {% block content %}
 <h1>Phones</h1>
-<ul>
 {% for phone in object_list %}
-    <h3>Manufacturer {{ phone.manufacturer }}</h3>
+<div class="container-image center">
+    <img src="{{ phone.image_url }}" alt="image">
+    <div class="item-text">
+        <h3>Manufacturer {{ phone.manufacturer }}</h3>
         <h4>Model: {{ phone.model }}</h4>
-        Detail --> 
+        Detail --><a href="{% url 'delete_phone' pk=phone.id %}"><button class="noselect white">delete</button></a>
         <p>size of display: {{ phone.display }}</p>
-        Manufacturer of processor{{ phone.processor }} ; cores - {{ phone.number_cores }} 
+        Manufacturer of processor{{ phone.processor }} ; cores - {{ phone.number_cores }}
+    </div>
+</div>
+
 {% empty %}
-    <li>No phones yet.</li>
+<p>No phones yet.</p>
 {% endfor %}
-</ul>
 {% endblock %}

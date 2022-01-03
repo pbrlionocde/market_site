@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <main class="px-7">
+    <div class="container">
+      <form method="post">{% csrf_token %}
+        Are you sure you want to delete "{{ object.id }}"?
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
+      </form>
+    </div>
+  </main>
+{% endblock %}

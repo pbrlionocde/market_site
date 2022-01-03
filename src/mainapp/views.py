@@ -1,5 +1,6 @@
 # from django.shortcuts import render
 from django.views.generic import CreateView, ListView
+from django.views.generic.edit import DeleteView
 from mainapp.models import Phone
 from django.urls import reverse_lazy
 
@@ -12,8 +13,13 @@ class PhoneCreateView(CreateView):
     model = Phone
     template_name = 'goods/phone.html'
     success_url = reverse_lazy('phone_add')
-    fields = ['manufacturer', 'model', 'display', 'processor', 'number_cores']
+    fields = ['manufacturer', 'model', 'display', 'processor', 'number_cores', 'image_url']
 
+
+class PhoneDeleteView(DeleteView):
+    model = Phone
+    template_name = 'goods/phone_confirm_delete.html'
+    success_url = reverse_lazy('list_goods')
 
 class GoodsListView(ListView):
 

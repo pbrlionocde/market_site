@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main/container_form.css' %}">
+{% endblock style %}
 
 
 {% block content %}
-<form method="post">
+
+<div class="container-form">
+  <H1>Create new phone</H1>
+  <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form.manufacturer }} <p>Manufacturer</p>
+    {{ form.model }} <p>model of phone</p>
+    {{ form.display }} <p>size of the display</p>
+    {{ form.processor }} <p>manufacturer of processor</p>
+    {{ form.number_cores }} <p>number of processor cores</p>
+    {{ form.image_url }} <p>urls on image</p>
     <input type="submit" value="{% trans 'Submit' %}" />
   </form>
+</div>
 {% endblock %}

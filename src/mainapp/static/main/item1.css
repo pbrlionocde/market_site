@@ -1,0 +1,29 @@
+.container-image {
+    height: auto;
+    width: 600px;
+    position: relative;
+    background-color: black;
+}
+
+img {
+    display: block;
+
+    width: 60%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+.item-text {
+    text-align: center;
+    
+    color: white;
+    
+  }
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
