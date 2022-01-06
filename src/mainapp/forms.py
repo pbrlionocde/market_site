@@ -11,3 +11,9 @@ class PhoneForm(forms.Form):
     display = forms.IntegerField(label='Display', required=True)
     processor = forms.CharField(max_length=40, label='Processor', required=True)
     number_cores = forms.IntegerField(label='Number cores', required=True)
+
+# class ItemFrom(forms.Form):
+#     """Form for base item"""
+
+#     category = forms.CharField(max_length=MAX_LEN_NAME, required=True)
+#     weight = forms.FloatField()

@@ -13,7 +13,7 @@ class PhoneCreateView(CreateView):
     model = Phone
     template_name = 'goods/phone.html'
     success_url = reverse_lazy('phone_add')
-    fields = ['manufacturer', 'model', 'display', 'processor', 'number_cores', 'image_url']
+    fields = ['manufacturer', 'category', 'weight', 'producing_country', 'model', 'display', 'processor', 'number_cores', 'image_url']
 
 
 class PhoneDeleteView(DeleteView):

@@ -14,6 +14,9 @@
   <form method="post">
     {% csrf_token %}
     {{ form.manufacturer }} <p>Manufacturer</p>
+    {{ form.category }} <p>category</p>
+    {{ form.weight }} <p>weight</p>
+    {{ form.producing_country }} <p>producing_country</p>
     {{ form.model }} <p>model of phone</p>
     {{ form.display }} <p>size of the display</p>
     {{ form.processor }} <p>manufacturer of processor</p>
