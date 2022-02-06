@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/forms.css' %}">
+{% endblock style %}
 
 {% block content %}
-<form method="post" action=".">
-    {% csrf_token %}
-    {{ form.as_p }}
+<div class="container-form">
+    <section>
+        <h3>Please log in</h3>
+        <form method="post" action=".">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-    <input type="submit" value="{% trans 'Log in' %}" />
-    <input type="hidden" name="next" value="{{ next }}" />
-</form>
+            <input type="submit" value="{% trans 'Log in' %}" />
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+        <ul class="nav justify-content-center">
+            <h4>If you haven`t an account, please register</h4>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'django_registration_register' %}"><button type="button"
+                        class="btn btn-light">Register</button></a>
+            </li>
+        </ul>
+    </section>
+</div>
 {% endblock %}

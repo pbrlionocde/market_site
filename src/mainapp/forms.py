@@ -1,16 +1,25 @@
 from django import forms
-
+from .models import Phone
 from .constant import MAX_LEN_NAME
 
 
-class PhoneForm(forms.Form):
+class PhoneForm(forms.ModelForm):
     """Form for phone items"""
+    class Meta:
+        model = Phone
+        fields = ['manufacturer', 'category', 'weight', 'producing_country', 'model', 'display', 'processor', 'number_cores', 'image_url']
+        widgets = {
+            'manufacturer': forms.TextInput(attrs={'class': 'FormField'}),
+            'category': forms.TextInput(attrs={'class': 'FormField'}),
+            'weight': forms.NumberInput(attrs={'class': 'FormField'}),
+            'producing_country': forms.TextInput(attrs={'class': 'FormField'}), 
+            'model': forms.TextInput(attrs={'class': 'FormField'}), 
+            'display': forms.NumberInput(attrs={'class': 'FormField'}), 
+            'processor': forms.TextInput(attrs={'class': 'FormField'}), 
+            'number_cores': forms.NumberInput(attrs={'class': 'FormField'}),
+            'image_url': forms.URLInput(attrs={'class': 'FormField'})
+        }
 
-    manufacturer = forms.CharField(max_length=MAX_LEN_NAME, required=True)
-    model = forms.CharField(max_length=MAX_LEN_NAME, required=True)
-    display = forms.IntegerField(label='Display', required=True)
-    processor = forms.CharField(max_length=40, label='Processor', required=True)
-    number_cores = forms.IntegerField(label='Number cores', required=True)
 
 # class ItemFrom(forms.Form):
 #     """Form for base item"""

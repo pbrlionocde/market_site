@@ -6,16 +6,40 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'main/navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/body.css' %}">
     {% block style %} {% endblock style %}
 
 </head>
 
 <body>
     <div class="navigation">
-        <a href="{% url 'list_goods' %}"><button class="noselect white">Home</button></a>
-        <a href="{% url 'phone_add' %}"><button class="noselect white">add phone</button></a>
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'list_goods' %}"><button type="button"
+                        class="btn btn-warning">Home</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'phone_add' %}"><button type="button" class="btn btn-warning">add
+                        phone</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}"><button type="button"
+                        class="btn btn-warning">Login</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}"><button type="button"
+                        class="btn btn-warning">Logout</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'django_registration_register' %}"><button type="button"
+                        class="btn btn-warning">Register</button></a>
+            </li>
+
+        </ul>
     </div>
+
     {% block content %} {% endblock %}
+
 </body>
 
 </html>

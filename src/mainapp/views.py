@@ -3,6 +3,7 @@ from django.views.generic import CreateView, ListView
 from django.views.generic.edit import DeleteView
 from mainapp.models import Phone
 from django.urls import reverse_lazy
+from .forms import PhoneForm
 
 from typing import Any, Dict
 
@@ -11,9 +12,11 @@ from typing import Any, Dict
 
 class PhoneCreateView(CreateView):
     model = Phone
+    form_class = PhoneForm
     template_name = 'goods/phone.html'
+
     success_url = reverse_lazy('phone_add')
-    fields = ['manufacturer', 'category', 'weight', 'producing_country', 'model', 'display', 'processor', 'number_cores', 'image_url']
+    # fields = ['manufacturer', 'category', 'weight', 'producing_country', 'model', 'display', 'processor', 'number_cores', 'image_url']
 
 
 class PhoneDeleteView(DeleteView):

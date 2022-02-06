@@ -3,26 +3,28 @@
 {% load static %}
 
 {% block style %}
-  <link rel="stylesheet" type="text/css" href="{% static 'main/container_form.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/forms.css' %}">
 {% endblock style %}
 
 
 {% block content %}
 
 <div class="container-form">
-  <H1>Create new phone</H1>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.manufacturer }} <p>Manufacturer</p>
-    {{ form.category }} <p>category</p>
-    {{ form.weight }} <p>weight</p>
-    {{ form.producing_country }} <p>producing_country</p>
-    {{ form.model }} <p>model of phone</p>
-    {{ form.display }} <p>size of the display</p>
-    {{ form.processor }} <p>manufacturer of processor</p>
-    {{ form.number_cores }} <p>number of processor cores</p>
-    {{ form.image_url }} <p>urls on image</p>
-    <input type="submit" value="{% trans 'Submit' %}" />
-  </form>
+  <section>
+    <H3>Create new phone</H3>
+    <form method="post" class='form_style'>
+      {% csrf_token %}
+      {{ form.manufacturer }} <p>Manufacturer</p>
+      {{ form.category }} <p>category</p>
+      {{ form.weight }} <p>weight</p>
+      {{ form.producing_country }} <p>producing_country</p>
+      {{ form.model }} <p>model of phone</p>
+      {{ form.display }} <p>size of the display</p>
+      {{ form.processor }} <p>manufacturer of processor</p>
+      {{ form.number_cores }} <p>number of processor cores</p>
+      {{ form.image_url }} <p>urls on image</p>
+      <input type="submit" value="{% trans 'Submit' %}" />
+    </form>
+  </section>
 </div>
 {% endblock %}

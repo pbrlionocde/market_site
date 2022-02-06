@@ -1,10 +1,24 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/forms.css' %}">
+{% endblock style %}
+
 
 {% block content %}
-<form method="post" action=".">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="{% trans 'Submit' %}" />
-</form>
+<div class="container-form">
+  <section>
+    <h3> Put yout data for register</h3>
+      <form method="post" action=".">
+        {% csrf_token %}
+        {{ form.username }} <p>username</p>
+        {{ form.email }} <p>email</p>
+        {{ form.password1 }} <p>password</p>
+        {{ form.password2 }} <p>repeat password</p>
+        <input type="submit" value="{% trans 'Submit' %}" />
+      </form>
+  </section>
+</div>
 {% endblock %}
