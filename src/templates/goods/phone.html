@@ -20,17 +20,7 @@
     <H3>Create new phone</H3>
     <form method="post" class='form_style'>
       {% csrf_token %}
-      {{ form.manufacturer }} <p>manufacturer</p>
-      {{ form.category }} <p>category</p>
-      {{ form.code_of_product }} <p>code of product</p>
-      {{ form.price }} <p>price</p>
-      {{ form.weight }} <p>weight</p>
-      {{ form.producing_country }} <p>producing country</p>
-      {{ form.model }} <p>model of phone</p>
-      {{ form.display }} <p>size of the display</p>
-      {{ form.processor }} <p>manufacturer of processor</p>
-      {{ form.number_cores }} <p>number of processor cores</p>
-      {{ form.image_url }} <p>urls on image</p>
+      <tr>{{ form.as_ul }}</tr>
       <input type="submit" value="{% trans 'Submit' %}" />
     </form>
   </section>

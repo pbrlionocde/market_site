@@ -10,7 +10,6 @@ from mainapp.constant import DEFAULT_IMAGE, MAX_DIGITS, MAX_LEN_NAME
 class ItemModel(models.Model):
 
     class Meta:
-
         abstract = True
 
     category = models.CharField(max_length=MAX_LEN_NAME)
@@ -19,6 +18,10 @@ class ItemModel(models.Model):
     weight = models.FloatField()
     producing_country = models.CharField(max_length=MAX_LEN_NAME)
     manufacturer = models.CharField(max_length=MAX_LEN_NAME)
+    description = models.TextField(max_length=1000)
+    dimensions = models.TextField(max_length=400)
+    complete_set = models.TextField(max_length=500)
+
 
 
 class Phone(ItemModel):

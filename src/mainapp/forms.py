@@ -19,6 +19,9 @@ class PhoneForm(forms.ModelForm):
             'processor',
             'number_cores',
             'image_url',
+            'description',
+            'dimensions',
+            'complete_set',
         ]
         widgets = {
             'manufacturer': forms.TextInput(attrs={CLASS: FORM_FIELD}),
@@ -32,4 +35,7 @@ class PhoneForm(forms.ModelForm):
             'processor': forms.TextInput(attrs={CLASS: FORM_FIELD}),
             'number_cores': forms.NumberInput(attrs={CLASS: FORM_FIELD}),
             'image_url': forms.URLInput(attrs={CLASS: FORM_FIELD}),
+            'description': forms.TextInput(attrs={CLASS: FORM_FIELD}),
+            'dimensions': forms.TextInput(attrs={CLASS: FORM_FIELD}),
+            'complete_set': forms.TextInput(attrs={CLASS: FORM_FIELD}),
         }
