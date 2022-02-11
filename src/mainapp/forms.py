@@ -1,30 +1,35 @@
 from django import forms
-from .models import Phone
-from .constant import MAX_LEN_NAME
+
+from mainapp.constant import CLASS, FORM_FIELD
+from mainapp.models import Phone
 
 
 class PhoneForm(forms.ModelForm):
-    """Form for phone items"""
     class Meta:
         model = Phone
-        fields = ['manufacturer', 'category', 'code_of_product', 'price', 'weight', 'producing_country', 'model', 'display', 'processor', 'number_cores', 'image_url']
+        fields = [
+            'manufacturer',
+            'category',
+            'code_of_product',
+            'price',
+            'weight',
+            'producing_country',
+            'model',
+            'display',
+            'processor',
+            'number_cores',
+            'image_url',
+        ]
         widgets = {
-            'manufacturer': forms.TextInput(attrs={'class': 'FormField'}),
-            'category': forms.TextInput(attrs={'class': 'FormField'}),
-            'code_of_product': forms.NumberInput(attrs={'class': 'FormField'}),
-            'price': forms.NumberInput(attrs={'class': 'FormField'}),
-            'weight': forms.NumberInput(attrs={'class': 'FormField'}),
-            'producing_country': forms.TextInput(attrs={'class': 'FormField'}), 
-            'model': forms.TextInput(attrs={'class': 'FormField'}), 
-            'display': forms.NumberInput(attrs={'class': 'FormField'}), 
-            'processor': forms.TextInput(attrs={'class': 'FormField'}), 
-            'number_cores': forms.NumberInput(attrs={'class': 'FormField'}),
-            'image_url': forms.URLInput(attrs={'class': 'FormField'})
+            'manufacturer': forms.TextInput(attrs={CLASS: FORM_FIELD}),
+            'category': forms.TextInput(attrs={CLASS: FORM_FIELD}),
+            'code_of_product': forms.NumberInput(attrs={CLASS: FORM_FIELD}),
+            'price': forms.NumberInput(attrs={CLASS: FORM_FIELD}),
+            'weight': forms.NumberInput(attrs={CLASS: FORM_FIELD}),
+            'producing_country': forms.TextInput(attrs={CLASS: FORM_FIELD}),
+            'model': forms.TextInput(attrs={CLASS: FORM_FIELD}),
+            'display': forms.NumberInput(attrs={CLASS: FORM_FIELD}),
+            'processor': forms.TextInput(attrs={CLASS: FORM_FIELD}),
+            'number_cores': forms.NumberInput(attrs={CLASS: FORM_FIELD}),
+            'image_url': forms.URLInput(attrs={CLASS: FORM_FIELD}),
         }
-
-
-# class ItemFrom(forms.Form):
-#     """Form for base item"""
-
-#     category = forms.CharField(max_length=MAX_LEN_NAME, required=True)
-#     weight = forms.FloatField()

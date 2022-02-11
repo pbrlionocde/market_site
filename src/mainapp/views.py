@@ -1,4 +1,3 @@
-# from django.shortcuts import render
 from typing import Any, Dict
 
 from django.core import serializers
@@ -7,9 +6,8 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 from django.views.generic.edit import DeleteView
 
+from mainapp.forms import PhoneForm
 from mainapp.models import Phone
-
-from .forms import PhoneForm
 
 # Create your views here.
 
@@ -18,7 +16,6 @@ class PhoneCreateView(CreateView):
     model = Phone
     form_class = PhoneForm
     template_name = 'goods/phone.html'
-
     success_url = reverse_lazy('phone_add')
 
 

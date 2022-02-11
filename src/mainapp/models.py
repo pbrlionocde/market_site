@@ -1,22 +1,21 @@
-from django.contrib.auth.models import User
+from tkinter.tix import MAX
+
 from django.db import models
 
-from mainapp.constant import DEFAULT_IMAGE, MAX_LEN_NAME
+from mainapp.constant import DEFAULT_IMAGE, MAX_DIGITS, MAX_LEN_NAME
 
 # Create your models here.
 
 
 class ItemModel(models.Model):
-    """Model for base item"""
 
     class Meta:
-        """Base metaclass"""
 
         abstract = True
 
     category = models.CharField(max_length=MAX_LEN_NAME)
     code_of_product = models.IntegerField()
-    price = models.DecimalField(max_digits=15, decimal_places=2)
+    price = models.DecimalField(max_digits=MAX_DIGITS, decimal_places=2)
     weight = models.FloatField()
     producing_country = models.CharField(max_length=MAX_LEN_NAME)
     manufacturer = models.CharField(max_length=MAX_LEN_NAME)
