@@ -7,10 +7,12 @@ class PhoneForm(forms.ModelForm):
     """Form for phone items"""
     class Meta:
         model = Phone
-        fields = ['manufacturer', 'category', 'weight', 'producing_country', 'model', 'display', 'processor', 'number_cores', 'image_url']
+        fields = ['manufacturer', 'category', 'code_of_product', 'price', 'weight', 'producing_country', 'model', 'display', 'processor', 'number_cores', 'image_url']
         widgets = {
             'manufacturer': forms.TextInput(attrs={'class': 'FormField'}),
             'category': forms.TextInput(attrs={'class': 'FormField'}),
+            'code_of_product': forms.NumberInput(attrs={'class': 'FormField'}),
+            'price': forms.NumberInput(attrs={'class': 'FormField'}),
             'weight': forms.NumberInput(attrs={'class': 'FormField'}),
             'producing_country': forms.TextInput(attrs={'class': 'FormField'}), 
             'model': forms.TextInput(attrs={'class': 'FormField'}), 

@@ -6,12 +6,6 @@ from mainapp.constant import DEFAULT_IMAGE, MAX_LEN_NAME
 # Create your models here.
 
 
-class CustomUser(User):
-    """Custom registration model"""
-
-    adress = models.TextField(blank=True)
-
-
 class ItemModel(models.Model):
     """Model for base item"""
 
@@ -21,6 +15,8 @@ class ItemModel(models.Model):
         abstract = True
 
     category = models.CharField(max_length=MAX_LEN_NAME)
+    code_of_product = models.IntegerField()
+    price = models.DecimalField(max_digits=15, decimal_places=2)
     weight = models.FloatField()
     producing_country = models.CharField(max_length=MAX_LEN_NAME)
     manufacturer = models.CharField(max_length=MAX_LEN_NAME)
