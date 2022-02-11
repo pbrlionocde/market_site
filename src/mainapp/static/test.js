@@ -1,5 +1,7 @@
 var nextPosition = "left_block";
 
+const URL = 'http://127.0.0.1:8000/'
+
 
 function createInlineBlock(element) {
     var item, out;
@@ -7,7 +9,7 @@ function createInlineBlock(element) {
 
     if (nextPosition == 'left_block') { item = '<div class "wrapper"><div class="' + nextPosition + '"><div class="container-image">' }
     else { item = '<div class="' + nextPosition + '"><div class="container-image">' }
-    
+
     item += '<img src="' + element.fields.image_url + '" alt="image" >';
     
     item += '<div class="item-text">';
@@ -25,6 +27,7 @@ function createInlineBlock(element) {
     item += '<tr><th>Description:</th><td>' + element.fields.description + '</td></tr>';
     item += '<tr><th>Dimensions:</th><td>' + element.fields.dimensions + '</td></tr>';
     item += '<tr><th>Complete set:</th><td>' + element.fields.complete_set + '</td></tr>';
+    item += '<a href="' + URL + element.pk + '/delete_phone' + '"><button class="btn btn-warning">delete</button></a>'
     item += '</table></div></div></div>';
 
     if (nextPosition == 'left_block') { nextPosition = 'right_block'; }
