@@ -24,6 +24,7 @@ class ItemModel(models.Model):
 
 class Phone(ItemModel):
     model = models.CharField(max_length=MAX_LEN_NAME)
+    category = models.CharField(max_length=MAX_LEN_NAME, db_index=True, default='Phone')
     display = models.FloatField()
     processor = models.CharField(max_length=MAX_LEN_NAME)
     number_cores = models.IntegerField()

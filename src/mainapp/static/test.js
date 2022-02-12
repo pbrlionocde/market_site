@@ -27,7 +27,7 @@ function createInlineBlock(element) {
     item += '<tr><th>Description:</th><td>' + element.fields.description + '</td></tr>';
     item += '<tr><th>Dimensions:</th><td>' + element.fields.dimensions + '</td></tr>';
     item += '<tr><th>Complete set:</th><td>' + element.fields.complete_set + '</td></tr>';
-    item += '<a href="' + URL + element.pk + '/delete_phone' + '"><button class="btn btn-warning">delete</button></a>'
+    item += '<a href="' + URL + element.fields.category + '/' + element.pk + '/delete' + '"><button class="btn btn-warning">delete</button></a>'
     item += '</table></div></div></div>';
 
     if (nextPosition == 'left_block') { nextPosition = 'right_block'; }

@@ -9,7 +9,6 @@ class PhoneForm(forms.ModelForm):
         model = Phone
         fields = [
             'manufacturer',
-            'category',
             'code_of_product',
             'price',
             'weight',
@@ -25,7 +24,6 @@ class PhoneForm(forms.ModelForm):
         ]
         widgets = {
             'manufacturer': forms.TextInput(attrs={CLASS: FORM_FIELD}),
-            'category': forms.TextInput(attrs={CLASS: FORM_FIELD}),
             'code_of_product': forms.NumberInput(attrs={CLASS: FORM_FIELD}),
             'price': forms.NumberInput(attrs={CLASS: FORM_FIELD}),
             'weight': forms.NumberInput(attrs={CLASS: FORM_FIELD}),
