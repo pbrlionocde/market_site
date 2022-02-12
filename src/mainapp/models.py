@@ -1,5 +1,3 @@
-from tkinter.tix import MAX
-
 from django.db import models
 
 from mainapp.constant import DEFAULT_IMAGE, MAX_DIGITS, MAX_LEN_NAME
