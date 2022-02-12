@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/text.css' %}">
+{% endblock style %}
 
 
 {% block content %}
   <main class="px-7">
-    <div class="container">
+    <div class="container text-color">
       <form method="post">{% csrf_token %}
         Are you sure you want to delete "{{ object.id }}"?
-        <button type="submit" class="btn btn-outline-dark">Submit</button>
+        <button type="submit" class="btn btn-warning">Submit</button>
       </form>
     </div>
   </main>

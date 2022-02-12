@@ -1,0 +1,52 @@
+hr {
+    color: silver;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    display: block;
+    width: auto;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper {
+    width: 90px;    
+}
+
+.container-image {
+    width: 65%;
+    background: rgba( 0,0,0,.6);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-text {
+    text-align: center;
+    color: white;    
+}
+
+.left_block {
+    float: left;
+    margin-top: 20px;
+    margin-left: 5%;
+    width: 45%;
+}
+
+.right_block {
+    margin-top: 20px;
+    margin-right: 5%;
+    float: right;
+    width: 45%;
+}
+
+

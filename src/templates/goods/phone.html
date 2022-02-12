@@ -8,21 +8,19 @@
 
 
 {% block content %}
-
+{% if form.subject.errors %}
+<ol>
+  {% for error in form.subject.errors %}
+  <li><strong>{{ error|escape }}</strong></li>
+  {% endfor %}
+</ol>
+{% endif %}
 <div class="container-form">
   <section>
     <H3>Create new phone</H3>
     <form method="post" class='form_style'>
       {% csrf_token %}
-      {{ form.manufacturer }} <p>Manufacturer</p>
-      {{ form.category }} <p>category</p>
-      {{ form.weight }} <p>weight</p>
-      {{ form.producing_country }} <p>producing_country</p>
-      {{ form.model }} <p>model of phone</p>
-      {{ form.display }} <p>size of the display</p>
-      {{ form.processor }} <p>manufacturer of processor</p>
-      {{ form.number_cores }} <p>number of processor cores</p>
-      {{ form.image_url }} <p>urls on image</p>
+      <tr>{{ form.as_ul }}</tr>
       <input type="submit" value="{% trans 'Submit' %}" />
     </form>
   </section>

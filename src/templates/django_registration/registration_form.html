@@ -8,15 +8,24 @@
 
 
 {% block content %}
+{% if form.subject.errors %}
+<ol>
+  {% for error in form.subject.errors %}
+  <li><strong>{{ error|escape }}</strong></li>
+  {% endfor %}
+</ol>
+{% endif %}
+
 <div class="container-form">
   <section>
     <h3> Put yout data for register</h3>
       <form method="post" action=".">
         {% csrf_token %}
-        {{ form.username }} <p>username</p>
+        {{ form.as_table }}
+        <!-- {{ form.username }} <p>username</p>
         {{ form.email }} <p>email</p>
         {{ form.password1 }} <p>password</p>
-        {{ form.password2 }} <p>repeat password</p>
+        {{ form.password2 }} <p>repeat password</p> -->
         <input type="submit" value="{% trans 'Submit' %}" />
       </form>
   </section>

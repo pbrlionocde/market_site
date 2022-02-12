@@ -1,29 +1,25 @@
-from django.contrib.auth.models import User
 from django.db import models
 
-from mainapp.constant import DEFAULT_IMAGE, MAX_LEN_NAME
+from mainapp.constant import DEFAULT_IMAGE, MAX_DIGITS, MAX_LEN_NAME
 
 # Create your models here.
 
 
-class CustomUser(User):
-    """Custom registration model"""
-
-    adress = models.TextField(blank=True)
-
-
 class ItemModel(models.Model):
-    """Model for base item"""
 
     class Meta:
-        """Base metaclass"""
-
         abstract = True
 
     category = models.CharField(max_length=MAX_LEN_NAME)
+    code_of_product = models.IntegerField()
+    price = models.DecimalField(max_digits=MAX_DIGITS, decimal_places=2)
     weight = models.FloatField()
     producing_country = models.CharField(max_length=MAX_LEN_NAME)
     manufacturer = models.CharField(max_length=MAX_LEN_NAME)
+    description = models.TextField(max_length=1000)
+    dimensions = models.TextField(max_length=400)
+    complete_set = models.TextField(max_length=500)
+
 
 
 class Phone(ItemModel):
