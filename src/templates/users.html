@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/text.css' %}">
+{% endblock style %}
+
+{% block content %}
+<!-- <h1 class="item-text">Phones</h1> -->
+{% for user in object_list %}
+<div class="text-color">
+    <p>User number: {{user.pk}}</p>
+    <p>email: {{user.email}}</p>
+    <p>username: {{user.username}}</p>
+    <p>group: {% for group in user.groups.all.values %} {{group.name}} {% endfor %}</p>
+    <hr>
+</div>
+{% endfor %}
+
+
+{% endblock %}

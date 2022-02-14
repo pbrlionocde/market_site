@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp',
+    'authapp',
 ]
 
 MIDDLEWARE = [
@@ -107,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# AUTH_USER_MODEL = 'authapp.CustomUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -129,6 +131,7 @@ STATIC_URL = '/static/'
 
 # Registration block
 LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/accounts/login/'
 
 ACCOUNT_ACTIVATION_DAYS = 30
 REGISTRATION_OPEN = True
