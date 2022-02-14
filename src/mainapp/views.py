@@ -36,6 +36,4 @@ class GoodsListView(ListView):
         for key, value in context.items():
             if isinstance(value, QuerySet):
                 context[key] = serializers.serialize('json', value)
-        
-
         return context

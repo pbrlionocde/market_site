@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/forms.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/text.css' %}">
+{% endblock style %}
+
+{% block content %}
+<!-- <h1 class="item-text">Phones</h1> -->
+
+<div class="text-color">
+  {% if form.subject.errors %}
+  <ol>
+    {% for error in form.subject.errors %}
+    <li><strong>{{ error|escape }}</strong></li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+  {{ user }}
+  <form action="" method="post">
+    {% csrf_token %}
+    tst{{ form.as_p }}tst
+    <button name="foo" value="upvote">Upvote</button>
+  </form>
+
+</div>
+
+
+
+{% endblock %}
